@@ -21,7 +21,7 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
-    let obj = fs.readdir("C:\\Users\\Computer\\Desktop\\Year2\\SpecialTopics\\a2repo\\electron-main-to-js\\music", (err, files) => {
+    let obj = fs.readdir(".\\music", (err, files) => {
     
         if (err)
           console.log(err);
@@ -34,7 +34,7 @@ app.whenReady().then(() => {
           })
         }
       })
-      
+
     const mainWindow = createWindow()
 
     mainWindow.webContents.once('dom-ready', () => {

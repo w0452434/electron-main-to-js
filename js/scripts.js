@@ -1,7 +1,7 @@
 const hello = document.getElementById('hello')
 
 const sel = document.getElementById('select')
-let count = 1
+let count = 1 
 
 
 window.electronAPI.onSayHello((_event, value) => {
