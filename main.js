@@ -1,6 +1,9 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 const path = require('path')
 const fs = require('fs')
+const url = ('url')
+
+
 let tracks = []
 
 const createWindow = () => {
@@ -18,6 +21,20 @@ const createWindow = () => {
 }
 
 app.whenReady().then(() => {
+    let obj = fs.readdir("C:\\Users\\Computer\\Desktop\\Year2\\SpecialTopics\\a2repo\\electron-main-to-js\\music", (err, files) => {
+    
+        if (err)
+          console.log(err);
+        else {
+          files.forEach(file => {
+            tracks.push(file);
+            var arraySongs = []
+            arraySongs = file
+            console.log(file)
+          })
+        }
+      })
+      
     const mainWindow = createWindow()
 
     mainWindow.webContents.once('dom-ready', () => {
@@ -30,20 +47,8 @@ app.whenReady().then(() => {
     })
 })
 
-fs.readdir("C:\\Users\\Computer\\Desktop\\Year2\\SpecialTopics\\a2repo\\electron-main-to-js\\music", (err, files) => {
-    if (err)
-      console.log(err);
-    else {
-      console.log("\nCurrent directory filenames:");
-      files.forEach(file => {
-        tracks.push(file);
-        var arraySongs = []
-        arraySongs = file
-        console.log(file)
-        console.log(arraySongs)
-      })
-    }
-  })
+
+
 
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
