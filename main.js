@@ -29,8 +29,8 @@ app.whenReady().then(() => {
           files.forEach(file => {
             tracks.push(file);
             var arraySongs = []
-            arraySongs = path.parse(file)
-            console.log(file)
+            arraySongs = file
+            console.log(path.parse(file))
           })
         }
       })
