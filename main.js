@@ -30,7 +30,7 @@ app.whenReady().then(() => {
             tracks.push(file);
             var arraySongs = []
             arraySongs = file
-            console.log(path.parse(file))
+            console.log(file)
           })
         }
       })
